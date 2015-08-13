@@ -1,2 +1,5 @@
-## 0.0.1 - First Release
-* upload file(buffer) to qiqiu and return url
+## 0.0.1
+* First Release
+
+## 0.0.2
+* README update

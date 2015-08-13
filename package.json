@@ -5,7 +5,8 @@
   "description": "qiniu uploader plugin for markdown-assistant",
   "keywords": [
     "qiniu",
-    "markdown-assistant"
+    "markdown-assistant",
+    "uploader"
   ],
   "author": {
     "name": "knightli",
