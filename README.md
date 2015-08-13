@@ -1,7 +1,12 @@
-# qiniu-uploader package
-An uploader for [markdown-assistant](https://github.com/knightli/markdown-assistant).
+# qiniu-uploader plugin
+An uploader plugin for [markdown-assistant](https://github.com/knightli/markdown-assistant).
 
-### how to set as an uploader for markdown-assistant
+### Notice
+You should have an bucket at qiniu to upload file  
+
+If not, [Signup](https://portal.qiniu.com/signup?code=3ln7nbck1u15e) and create a bucket First!
+
+### How to use
 
 1. Install this package in atom
 
