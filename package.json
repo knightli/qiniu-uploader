@@ -1,7 +1,7 @@
 {
   "name": "qiniu-uploader",
   "main": "./lib/main",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "qiniu uploader plugin for markdown-assistant",
   "keywords": [
     "qiniu",
