@@ -19,7 +19,7 @@
       "email":"tychenjiajun@live.cn",
       "url":"https://github.com/tychenjiajun"
     }
-  ]
+  ],
   "activationCommands": {
     "atom-workspace": "qiniu-uploader:toggle"
   },
