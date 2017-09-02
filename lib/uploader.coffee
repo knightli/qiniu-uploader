@@ -4,16 +4,15 @@ crypto = require "crypto"
 module.exports = class Uploader
 
   constructor: (cfg) ->
-    qiniu.conf.ACCESS_KEY = cfg.ak
-    qiniu.conf.SECRET_KEY = cfg.sk
-
+    @mac = new qiniu.auth.digest.Mac(cfg.ak,cfg.sk)
     @domain = cfg.domain
     @bucket = cfg.bucket
     @token = @getToken()
 
   getToken: () ->
-    putPolicy = new qiniu.rs.PutPolicy(@bucket)
-    return putPolicy.token()
+    options = {scope:@bucket}
+    putPolicy = new qiniu.rs.PutPolicy(options)
+    return putPolicy.uploadToken(@mac)
 
   getKey: (buffer) ->
     fsHash = crypto.createHash('md5')
@@ -25,10 +24,13 @@ module.exports = class Uploader
     filename = key
     filename += ".#{ext}" if typeof ext is 'string' and ext
 
-    qiniu.io.put @token, "#{filename}" , buffer, null, (err, ret) =>
-      if !err
+    config = new qiniu.conf.Config()
+    formUploader = new qiniu.form_up.FormUploader(config);
+
+    formUploader.put @token, "#{filename}" , buffer, null, (respErr, respBody, respInfo) =>
+      if !respErr
         #console.log(ret.key, ret.hash)
-        callback(null, {ret: ret, url:"#{@domain}/#{ret.key}"})
+        callback(null, {ret: respBody, url:"#{@domain}/#{respBody.key}"})
       else
         #console.log(err)
         callback(err)
