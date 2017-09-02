@@ -1,7 +1,7 @@
 {
   "name": "qiniu-uploader",
   "main": "./lib/main",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "qiniu uploader plugin for markdown-assistant",
   "keywords": [
     "qiniu",
@@ -13,6 +13,13 @@
     "email": "knightli@foxmail.com",
     "url": "https://github.com/knightli"
   },
+  "contributors":[
+    {
+      "name":"Jiajun Chen",
+      "email":"tychenjiajun@live.cn",
+      "url":"https://github.com/tychenjiajun"
+    }
+  ]
   "activationCommands": {
     "atom-workspace": "qiniu-uploader:toggle"
   },
@@ -22,6 +29,6 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
-    "qiniu": "^6.1.8"
+    "qiniu": "^7.0.8"
   }
 }
